@@ -1,0 +1,9 @@
+[package]
+name    = "idp-state"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sea-orm.workspace = true
+fred.workspace    = true
+idp-config        = { path = "../idp-config" }

@@ -1,0 +1,15 @@
+[package]
+name    = "idp-migration"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "migration"
+path = "src/lib.rs"
+
+[dependencies]
+sea-orm-migration = { version = "1.0.0", features = [
+    "runtime-tokio-rustls",
+    "sqlx-postgres",
+] }
+async-std = { version = "1", features = ["tokio1"] }
