@@ -17,7 +17,7 @@ impl Cache {
 
         let pool = Builder::from_config(redis_config)
             .with_connection_config(|config| config.connection_timeout = Duration::from_secs(8))
-            .build_pool(*config.pool_size() as usize)
+            .build_pool(15)
             .map_err(|e| StateError::Cache(e))?;
 
         pool.init().await.map_err(|e| StateError::Cache(e))?;

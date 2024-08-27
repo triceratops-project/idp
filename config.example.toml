@@ -7,13 +7,6 @@ port         = 8080
 
 [database]
 uri = "postgres://username:password@127.0.0.1/idp"
-# max_connections    = 1000 # Optional: Maximum concurrent database pool connections (Default: 1000)
-# min_connections    = 5 # Optional: Minimum concurrent database pool connections (Default: 5)
-# connection_timeout = 8 # Optional: Seconds elapsed before failed to connect timeout error (Default: 8)
-# acquire_timeout    = 8 # Optional: Seconds elapsed before failed to get connection from pool (Default: 8)
-# idle_timeout       = 15 # Optional: Seconds elapsed for idle connections to be terminated (Default: 15)
-# max_lifetime       = 32 # Optional: Seconds elapsed TimeToLive for database connection (Default: 32)
 
 [cache]
 uri       = "redis://127.0.0.1"
-pool_size = 5
