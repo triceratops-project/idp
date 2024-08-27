@@ -4,17 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-fred.workspace    = true
-sea-orm.workspace = true
-serde.workspace   = true
-idp-config        = { path = "../idp-config" }
-idp-state         = { path = "../idp-state" }
-idp-models        = { path = "../idp-models" }
-argon2            = { version = "0.5.3", features = ["std"] }
-tokio             = { version = "1.39.2", features = ["rt-multi-thread"] }
-axum              = "0.7.5"
-chrono            = "0.4.38"
-cuid2             = "0.1.2"
-jsonwebtoken      = "9.3.0"
-rand              = "0.8.5"
-serde_json        = "1.0.124"
+fred.workspace      = true
+sea-orm.workspace   = true
+serde.workspace     = true
+thiserror.workspace = true
+idp-config          = { path = "../idp-config" }
+idp-state           = { path = "../idp-state" }
+idp-models          = { path = "../idp-models" }
+argon2              = { version = "0.5.3", features = ["std"] }
+tokio               = { version = "1.39.2", features = ["rt-multi-thread"] }
+axum                = "0.7.5"
+chrono              = "0.4.38"
+cuid2               = "0.1.2"
+jsonwebtoken        = "9.3.0"
+rand                = "0.8.5"
+serde_json          = "1.0.124"
