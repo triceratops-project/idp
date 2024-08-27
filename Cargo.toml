@@ -1,12 +1,6 @@
 [workspace]
-resolver = "2"
-members = [
-    "crates/idp-config",
-    "crates/idp-migration",
-    "crates/idp-models",
-    "crates/idp-server",
-    "crates/idp-state",
-]
+resolver        = "2"
+members         = ["crates/idp-*"]
 default-members = ["crates/idp-server"]
 
 [workspace.dependencies]
