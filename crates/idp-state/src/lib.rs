@@ -1,10 +1,10 @@
 mod cache;
 mod database;
-
-use std::{error::Error, fmt};
+mod error;
 
 use cache::Cache;
 use database::Database;
+use error::StateError;
 use fred::prelude::RedisPool;
 use idp_config::IdpConfig;
 use sea_orm::DatabaseConnection;
@@ -30,14 +30,3 @@ impl IdpState {
         &self.cache
     }
 }
-
-#[derive(Debug)]
-pub struct StateError;
-
-impl fmt::Display for StateError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str("Error building state")
-    }
-}
-
-impl Error for StateError {}

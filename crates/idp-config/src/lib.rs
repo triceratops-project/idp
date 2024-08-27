@@ -1,11 +1,13 @@
 mod cache;
 mod database;
+mod error;
 mod server;
 
-use std::{error::Error, fmt, fs};
+use std::fs;
 
 pub use cache::CacheConfig;
 pub use database::DatabaseConfig;
+use error::ConfigError;
 use serde::Deserialize;
 pub use server::ServerConfig;
 
@@ -22,12 +24,13 @@ pub struct IdpConfig {
 
 impl IdpConfig {
     pub fn read() -> Result<Self, ConfigError> {
-        let config_string = fs::read_to_string(CONFIG_NAME).map_err(|_| ConfigError)?;
+        let config_string = fs::read_to_string(CONFIG_NAME).map_err(|e| ConfigError::Io(e))?;
 
-        let config = toml::from_str::<IdpConfig>(&config_string).map_err(|_| ConfigError)?;
+        let config = toml::from_str::<IdpConfig>(&config_string)
+            .map_err(|e| ConfigError::Deserialization(e))?;
 
         if config.version > CONFIG_VERSION {
-            return Err(ConfigError);
+            return Err(ConfigError::VersionMismatch);
         }
 
         Ok(config)
@@ -45,14 +48,3 @@ impl IdpConfig {
         &self.cache
     }
 }
-
-#[derive(Debug)]
-pub struct ConfigError;
-
-impl fmt::Display for ConfigError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str("Error loading config")
-    }
-}
-
-impl Error for ConfigError {}

@@ -3,6 +3,7 @@
         "axum",
         "chrono",
         "cuid",
-        "jsonwebtoken"
+        "jsonwebtoken",
+        "thiserror"
     ],
 }
