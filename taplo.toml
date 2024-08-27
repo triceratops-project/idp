@@ -1,7 +1,7 @@
 [formatting]
 align_comments = true
 align_entries  = true
-indent_entries = true
+indent_entries = false
 reorder_keys   = false
 reorder_arrays = true
 

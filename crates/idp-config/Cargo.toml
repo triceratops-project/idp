@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-serde.workspace = true
-url.workspace   = true
-toml            = "0.8.19"
+serde.workspace     = true
+url.workspace       = true
+thiserror.workspace = true
+toml                = "0.8.19"
