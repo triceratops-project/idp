@@ -1,0 +1,11 @@
+localhost:3000 {
+	handle /api* {
+		reverse_proxy 127.0.0.1:8080
+	}
+
+	handle {
+		file_server
+		root * apps/frontend/build
+		try_files {path} /index.html
+	}
+}
