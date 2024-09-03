@@ -19,8 +19,13 @@ impl MigrationTrait for Migration {
                             .not_null(),
                     )
                     .col(ColumnDef::new(User::Email).string().unique_key().not_null())
-                    .col(ColumnDef::new(User::Password).string())
-                    .col(ColumnDef::new(User::SessionToken).char_len(24).unique_key().not_null())
+                    .col(ColumnDef::new(User::Password).char_len(74))
+                    .col(
+                        ColumnDef::new(User::SessionToken)
+                            .char_len(24)
+                            .unique_key()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(User::CreatedAt).timestamp().not_null())
                     .to_owned(),
             )
