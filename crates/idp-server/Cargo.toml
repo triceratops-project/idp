@@ -9,6 +9,7 @@ sea-orm.workspace   = true
 serde.workspace     = true
 thiserror.workspace = true
 idp-config          = { path = "../idp-config" }
+idp-helpers         = { path = "../idp-helpers" }
 idp-state           = { path = "../idp-state" }
 idp-models          = { path = "../idp-models" }
 argon2              = { version = "0.5.3", features = ["std"] }

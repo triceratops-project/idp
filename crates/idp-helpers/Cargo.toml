@@ -1,5 +1,5 @@
 [package]
-name    = "idp-extractors"
+name    = "idp-helpers"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,7 +7,7 @@ edition = "2021"
 serde.workspace     = true
 thiserror.workspace = true
 axum                = "0.7.5"
-mime = "0.3.17"
-serde_json = "1.0.128"
+mime                = "0.3.17"
+serde_json          = "1.0.128"
 serde_path_to_error = "0.1.16"
-bytes = "1.7.1"
+bytes               = "1.7.1"

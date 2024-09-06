@@ -1480,7 +1480,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "idp-extractors"
+name = "idp-helpers"
 version = "0.1.0"
 dependencies = [
  "axum",
@@ -1521,7 +1521,7 @@ dependencies = [
  "cuid2",
  "fred",
  "idp-config",
- "idp-extractors",
+ "idp-helpers",
  "idp-models",
  "idp-state",
  "jsonwebtoken",
