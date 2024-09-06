@@ -4,14 +4,14 @@ members         = ["crates/idp-*"]
 default-members = ["crates/idp-server"]
 
 [workspace.dependencies]
-sea-orm = { version = "1.0.1", features = [
+sea-orm = { version = "1.0", features = [
     "runtime-tokio-rustls",
     "sqlx-postgres",
 ] }
-fred = { version = "9.1.2", features = ["enable-rustls"] }
-serde = { version = "1.0.209", features = ["derive"] }
+fred = { version = "9.2", features = ["enable-rustls"] }
+serde = { version = "1.0", features = ["derive"] }
 url = { version = "2.5.2", features = ["serde"] }
-thiserror = "1.0.63"
+thiserror = "1.0"
 
 [profile.release]
 debug     = false
