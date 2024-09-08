@@ -7,6 +7,7 @@ use crate::Json;
 pub struct ErrorResponse {
     status: u16,
     description: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
     error_id: Option<String>,
 }
 
