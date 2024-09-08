@@ -2,12 +2,16 @@ mod cache;
 mod database;
 mod error;
 
+use std::sync::Arc;
+
 use cache::Cache;
 use database::Database;
 use error::StateError;
 use fred::prelude::RedisPool;
 use idp_config::IdpConfig;
 use sea_orm::DatabaseConnection;
+
+pub type AppState = Arc<IdpState>;
 
 pub struct IdpState {
     db: DatabaseConnection,
